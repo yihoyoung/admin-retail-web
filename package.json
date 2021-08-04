@@ -9,8 +9,11 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "element-ui": "^2.15.5",
     "koa": "^2.13.1",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-router": "^3.5.2",
+    "vuejs-logger": "^1.5.5"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.4.0",
