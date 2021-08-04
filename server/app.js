@@ -1,6 +1,11 @@
+const json = require('koa-json')
+const koaBodyParser = require('koa-bodyparser')
+
 const Koa = require('koa')
 const app = new Koa()
 
+app.use(koaBodyParser())
+app.use(json())
 app.use(async (ctx, next) => {
     await next()
     const rt = ctx.response.get('X-Response-Time')
@@ -15,8 +20,9 @@ app.use(async (ctx, next) => {
     ctx.set('X-Response-Time', `${ms}ms`)
 })
 
-app.use(async ctx => {
-    ctx.body = 'Hello World!'
+app.use(async (ctx, next) => {
+    ctx.body = { msg: 'Hello World!', path: ctx.path, method: ctx.method}
+    await next()
 })
 
 

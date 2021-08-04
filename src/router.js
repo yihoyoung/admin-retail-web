@@ -25,6 +25,8 @@ const routers = [
     }, {
         path: '/login', component: Login
     }, {
+        path: '/', component: Login
+    }, {
         path: '/logout', component: Logout
     }
 ]
