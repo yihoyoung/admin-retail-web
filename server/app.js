@@ -6,7 +6,7 @@ const router = require('./router')
 const Koa = require('koa')
 const app = new Koa()
 
-// app.use(errorHandler())
+app.use(errorHandler)
 app.use(koaBodyParser())
 app.use(json())
 app.use(async (ctx, next) => {
