@@ -1,9 +1,12 @@
 const json = require('koa-json')
 const koaBodyParser = require('koa-bodyparser')
+const errorHandler = require('./middlewares/error_handler')
+const router = require('./router')
 
 const Koa = require('koa')
 const app = new Koa()
 
+// app.use(errorHandler())
 app.use(koaBodyParser())
 app.use(json())
 app.use(async (ctx, next) => {
@@ -25,5 +28,6 @@ app.use(async (ctx, next) => {
     await next()
 })
 
+app.use(router.routes())
 
 app.listen(3000)

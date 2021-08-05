@@ -1,10 +1,11 @@
 const fs = require('fs')
 const path = require('path')
+const dbConfig = require('./secrets/db.json')
 
 let secretPath = 'secrets'
 
-export default {
+module.exports = {
     SECRET: fs.readFileSync(path.resolve(__dirname, secretPath, 'jwt-key.txt')),
     EXP_TIME: '1h',
-    DATA_BASE: JSON.parse(fs.realpathSync(path.resolve(__dirname, secretPath, 'db.json')))
+    DATA_BASE: dbConfig
 }

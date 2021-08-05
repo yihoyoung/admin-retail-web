@@ -2,8 +2,8 @@ const Sequelize = require('sequelize')
 const config = require('../config')
 
 
-const dbConfig = config.default.DATA_BASE
-const sequelize = new Sequelize(`mysql://${dbConfig.username}:${dbConfig.password}@${dbConfig.port}/${dbConfig.schema}`,
+const dbConfig = config.DATA_BASE
+const sequelize = new Sequelize(`mysql://${dbConfig.username}:${dbConfig.password}@${dbConfig.host}:${dbConfig.port}/${dbConfig.schema}`,
     {
         pool: {
             max: 5,
@@ -13,4 +13,4 @@ const sequelize = new Sequelize(`mysql://${dbConfig.username}:${dbConfig.passwor
         }
     })
 
-export default sequelize
+module.exports = sequelize

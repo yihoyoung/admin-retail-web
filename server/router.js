@@ -7,4 +7,4 @@ router.prefix('/api')
 
 router.get('/user', user.getUser)
 
-export default router
+module.exports = router

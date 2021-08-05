@@ -9,14 +9,14 @@ class User extends Model {}
 User.init({
     id: {
         type: Sequelize.UUID,
-        defaultValue: uuid(),
+        defaultValue: uuid.v1(),
         primaryKey: true
     },
     name: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    password: {
+    passwd: {
         type: Sequelize.STRING,
         allowNull: false
     }
@@ -29,4 +29,4 @@ User.sync().then(() => {
     console.log('== Table: User init')
 })
 
-export default User
+module.exports = User

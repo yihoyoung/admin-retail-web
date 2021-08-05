@@ -1,5 +1,5 @@
 const User = require('../schema/user')
 
-export default {
+module.exports = {
     getUser: async (id) => {},
 }
